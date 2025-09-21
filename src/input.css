@@ -3,33 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles for the application are defined here using Tailwind's @apply. */
 
 body {
-  /* Removed h-screen, flex, items-center, justify-center, bg-gradient-to-b, from-black, to-gray-900, text-white
-     These are now handled in App.jsx's main div. */
+  margin: 0;
+  padding: 0;
 }
 
 .title {
-  /* Styles the main title with large text, bold font, center alignment, and a blue drop shadow.
-     Removed mb-10 as the title is now in the top bar. */
   @apply text-5xl font-bold text-center drop-shadow-[0_0_10px_rgba(59,130,246,0.8)];
 }
 
 .login-box {
-  /* Styles the login container with a semi-transparent background, rounded corners, padding, width constraints, flex layout, gap, and shadow. */
   @apply bg-white/5 rounded-2xl p-10 w-[400px] max-w-[90%] flex flex-col gap-6 shadow-xl;
 }
 
 .input-wrapper {
-  /* Styles input field containers with flex layout, centered items, semi-transparent background, rounded corners, and padding. */
   @apply flex items-center bg-white/10 rounded-xl px-4 py-3;
 }
 
-.input-wrapper img {
-  /* Styles icons within input wrappers with specific width, height, right margin, and opacity.
-     Adjusted height to match input field height more closely. */
-  @apply w-5 h-5 mr-3 opacity-70; /* Adjusted w-6 h-6 to w-5 h-5 for better sizing */
+.input-wrapper .input-icon {
+  @apply w-6 h-6 mr-3 opacity-70 flex-shrink-0 inline-block align-middle; /* Adjusted w-5 h-5 to w-6 h-6, added inline-block and align-middle */
 }
 
 .input-wrapper input {
@@ -64,9 +57,9 @@ body {
     @apply px-3 py-2;
   }
 
-  .input-wrapper img {
-    /* Adjusts icon size for smaller screens if needed, keeping consistency. */
-    @apply w-4 h-4; /* Slightly smaller for mobile */
+  .input-wrapper .input-icon {
+    /* Adjusts icon size for smaller screens to maintain proportionality. */
+    @apply w-5 h-5; /* Adjusted for mobile */
   }
 
   .button-wrapper button {
